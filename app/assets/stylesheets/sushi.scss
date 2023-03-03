@@ -1,0 +1,20 @@
+
+
+$primary:  #5CAB7D;
+$btn-border-radius:3px;
+@import 'bootstrap/scss/bootstrap';
+body {
+    background-color: #f5f5f5;
+}
+header{
+    background-color:#fff;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin:auto;
+}
+.form-floating {
+    position: relative;
+}

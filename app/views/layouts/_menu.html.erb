@@ -1,0 +1,16 @@
+<header>
+    <div class="px-3 py-2 border-bottom mb-3">
+      <div class="container d-flex flex-wrap justify-content-end">
+        <div class="text-end">
+        <% if user_signed_in? %> 
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-light"%> 
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, class:"btn btn-light"%>
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to "Sign up", new_registration_path(resource_name), class:"btn btn-primary" %>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </header>
