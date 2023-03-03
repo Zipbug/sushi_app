@@ -1,19 +1,25 @@
 
 
-$primary:  #5CAB7D;
-$btn-border-radius:3px;
+@import './variable_overides.scss';
 @import 'bootstrap/scss/bootstrap';
 body {
-    background-color: #f5f5f5;
+    background-color: #fdfbfb;
+    background-image: linear-gradient( #f5f7fa 0%, #c3cfe2 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100VH;
 }
 header{
     background-color:#fff;
+    box-shadow: var($box-shadow);
 }
 
-.form-signin {
+.form-signin,.card {
     max-width: 330px;
     padding: 15px;
     margin:auto;
+    background-color:#fff;
+    box-shadow: var($box-shadow);
 }
 .form-floating {
     position: relative;

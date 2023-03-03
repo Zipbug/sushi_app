@@ -1,3 +1,16 @@
 <% if user_signed_in? %> 
- <div> Welcome <%= current_user.email %> </div> 
+ <div class="card">
+    <div class="card-body">
+    <div> Welcome <%= current_user.email %> <%= current_user.id %></div> 
+    <% unless @locations.nil? %>
+        Your locations
+        <ul>
+        <% @locations.each do |location| %>
+             <li><%= link_to location.name, location_path(location)  %></li>
+            <% end %>
+        </ul>
+    <% end %>
+    <%=link_to "New Location", locations_url, class:"btn btn-light" %>
+    </div>
+ </div>
 <% end %>
