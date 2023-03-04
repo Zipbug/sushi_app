@@ -4,8 +4,8 @@ class LocationsController < ApplicationController
   end
 
   def create
-    location_params[:users_id] = current_user.id
-    @location = Location.new(location_params)   
+    @location = Location.new(location_params) 
+    @location.user_id = current_user.id
     if @location.save   
       flash[:notice] = 'Location added!'   
       redirect_to root_path   
@@ -21,7 +21,7 @@ class LocationsController < ApplicationController
   end
 
   def edit
-    location_params[:users_id] = session[:user_id]
+    location_params[:user_id] = current_user.id
     @location = Location.find(params[:id])
     @location.update(location_params)
   end
@@ -32,6 +32,6 @@ class LocationsController < ApplicationController
   end
   private
   def location_params   
-    params.permit(:name,:description,:address,:users_id)   
+    params.permit(:name,:description,:address,:user_id )   
   end   
 end
