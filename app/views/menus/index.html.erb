@@ -1,2 +1,9 @@
-<h1>Menus#index</h1>
-<p>Find me in app/views/menus/index.html.erb</p>
+<div class="card">
+    <h2>New Menu</h2>
+    <%= form_with model: @menu do |form| %>
+        <%= form.text_field :name, placeholder: "Name" %>
+        <%= form.text_field :descrition, placeholder: "Description" %>
+        <%= form.hidden_field  :location_id, value:@location  %>
+        <%= form.submit %>
+    <% end %>
+</div>

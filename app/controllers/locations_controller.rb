@@ -17,7 +17,8 @@ class LocationsController < ApplicationController
 
 
   def show
-   
+    @location = Location.find(params[:id])
+    @menus = Menu.where(location_id: params[:id])
   end
 
   def edit
