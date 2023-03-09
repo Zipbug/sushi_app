@@ -19,7 +19,7 @@ class MenusController < ApplicationController
 
   def show
     @menu = Menu.find(params[:id])
-    @items = Items.where('menu_id = ?', params[:id])
+    @items = Item.where(menu_id: params[:id])
   end
 
   def edit
